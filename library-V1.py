@@ -52,7 +52,7 @@ class Library(Movie, Series):
         
     def display_menu(self):
          print("""Biblioteka filmów:
-                1. Pokaz liste seriali
+                1. Pokaz liste
                 2. Dodaj film
                 3. Dodaj serial
                 4. Szukaj
