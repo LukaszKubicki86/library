@@ -28,7 +28,7 @@ class Series:
         self.episode = episode
         
     def get_series(self):
-        num = int(input("Ilość Elementów"))
+        num = int(input("Ilość Elementów "))
         
         for i in range(num):
             roll= i+1
@@ -51,7 +51,7 @@ class Library(Movie, Series):
         }
         
     def display_menu(self):
-         print("""library Menu
+         print("""Biblioteka filmów:
                 1. Pokaz liste seriali
                 2. Dodaj film
                 3. Dodaj serial
@@ -67,11 +67,11 @@ class Library(Movie, Series):
             if action:
                 action()
             else:
-                print("{0} is not a valid choice".format(choice))
+                print("{0} wybierz jeszcze raz".format(choice))
                 
     def see(self):
         print(filmy)
-        anykay = input("Enter anything to return to main menu")
+        anykay = input("wciśnij dowolny klawisz żeby wejść do menu")
         Library()
     
     def search(self):
@@ -82,9 +82,12 @@ class Library(Movie, Series):
             print("\n Nie ma na liscie")
             
     def generate_view(self):
-        n = 2
-        los = random.sample(list(filmy.values()), k=n)
-        print(los)
+        if len(filmy) == 0:
+            print('Lista jest pusta')
+        else:
+            n = 2
+            los = random.sample(list(filmy.values()), k=n)
+            print(los)
         
 if __name__ == "__main__":  
     Library().run()  
@@ -93,3 +96,5 @@ if __name__ == "__main__":
     print (Library.get_series())
     print (Library.search)
     print (Library.generate_view())
+    
+    
